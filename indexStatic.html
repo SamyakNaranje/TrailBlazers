@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrailBlazers - Pioneering Software Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e7eb;
+        }
+        .hero-gradient {
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.3), hsla(0, 0%, 100%, 0));
+        }
+        .feature-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(17, 17, 17, 0.5);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: rgba(99, 102, 241, 0.7);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1), 0 4px 6px -2px rgba(99, 102, 241, 0.05);
+        }
+        .client-slider .slide-track {
+            animation: scroll 40s linear infinite;
+            display: flex;
+            width: calc(250px * 14);
+        }
+        .client-slider .slide {
+            height: 100px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+        .client-slider img {
+            max-height: 50px;
+            filter: grayscale(100%) brightness(1.5);
+            transition: filter 0.3s ease;
+        }
+        .client-slider .slide:hover img {
+            filter: grayscale(0%) brightness(1);
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 7)); }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Style for select dropdown arrow */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2em;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/30 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-white flex items-center">
+                <i class="fas fa-meteor mr-2 text-indigo-400"></i>
+                TrailBlazers
+            </a>
+            <div class="flex items-center space-x-8">
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-indigo-400 transition-colors">About Us</a>
+                    <a href="#services" class="text-gray-300 hover:text-indigo-400 transition-colors">Services</a>
+                    <a href="#work" class="text-gray-300 hover:text-indigo-400 transition-colors">Our Work</a>
+                    <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition-colors">Contact</a>
+                </nav>
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-black/80 backdrop-blur-md">
+            <a href="#about" class="block py-3 px-6 text-gray-300 hover:bg-indigo-600/30">About Us</a>
+            <a href="#services" class="block py-3 px-6 text-gray-300 hover:bg-indigo-600/30">Services</a>
+            <a href="#work" class="block py-3 px-6 text-gray-300 hover:bg-indigo-600/30">Our Work</a>
+            <a href="#contact" class="block py-3 px-6 text-gray-300 hover:bg-indigo-600/30">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="min-h-screen flex items-center justify-center text-center pt-24 pb-12 hero-gradient">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 animate-fade-in-down">
+                        Engineering the <span class="text-indigo-400">Future</span> of Software
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 animate-fade-in-up">
+                        At TrailBlazers, we craft bespoke software solutions that propel businesses into the next generation of technology, innovation, and success.
+                    </p>
+                    <div class="flex justify-center space-x-4 animate-fade-in-up" style="animation-delay: 0.5s;">
+                        <a href="#contact" class="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                            Start a Project
+                        </a>
+                        <a href="#services" class="bg-gray-700/50 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-600/50 transition-all duration-300 transform hover:scale-105">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-gray-400 font-semibold mb-8 text-lg">TRUSTED BY INDUSTRY LEADERS WORLDWIDE</h3>
+                <div class="client-slider overflow-hidden relative" 
+                    x-data="{}" 
+                    x-init="$nextTick(() => { 
+                        let ul = $refs.logos; 
+                        ul.insertAdjacentHTML('beforeend', ul.innerHTML); 
+                        ul.insertAdjacentHTML('beforeend', ul.innerHTML); 
+                    })">
+                    <div class="slide-track" x-ref="logos">
+                        <div class="slide"><img src="https://placehold.co/150x50/111827/ffffff?text=InnovateCorp" alt="Client 1"></div>
+                        <div class="slide"><img src="https://placehold.co/150x50/111827/ffffff?text=QuantumLeap" alt="Client 2"></div>
+                        <div class="slide"><img src="https://placehold.co/150x50/111827/ffffff?text=ApexEnterprises" alt="Client 3"></div>
+                        <div class="slide"><img src="https://placehold.co/150x50/111827/ffffff?text=StellarSolutions" alt="Client 4"></div>
+                        <div class="slide"><img src="https://placehold.co/150x50/111827/ffffff?text=NexusDynamics" alt="Client 5"></div>
+                        <div class="slide"><img src="https://placehold.co/150x50/111827/ffffff?text=VisionaryTech" alt="Client 6"></div>
+                        <div class="slide"><img src="https://placehold.co/150x50/111827/ffffff?text=FutureProof" alt="Client 7"></div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24">
+            <div class="container mx-auto px-6 scroll-reveal">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-indigo-400 font-semibold">Who We Are</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 mb-6">Pioneers in Digital Transformation</h2>
+                        <p class="text-gray-300 text-lg mb-4">
+                            TrailBlazers was founded on the principle of innovation. We are a collective of expert engineers, visionary designers, and strategic thinkers dedicated to solving complex challenges with elegant, high-performance software.
+                        </p>
+                        <p class="text-gray-300 text-lg">
+                            Our mission is to empower businesses by building robust, scalable, and intuitive digital products that drive growth and create lasting value.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/1f2937/6366f1?text=Our+Team" alt="Our Team" class="rounded-lg shadow-2xl relative z-10">
+                        <div class="absolute -top-4 -left-4 w-full h-full bg-indigo-600/30 rounded-lg transform rotate-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 bg-gray-900/50">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-3xl mx-auto scroll-reveal">
+                    <span class="text-indigo-400 font-semibold">Our Expertise</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 mb-6">Comprehensive Software Solutions</h2>
+                    <p class="text-gray-300 text-lg mb-12">
+                        From initial concept to final deployment, we provide end-to-end services to bring your vision to life.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card p-8 rounded-xl text-left scroll-reveal">
+                        <i class="fas fa-code text-3xl text-indigo-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Custom Software Development</h3>
+                        <p class="text-gray-400">Tailor-made software that fits your unique business processes and objectives perfectly.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl text-left scroll-reveal" style="transition-delay: 0.1s;">
+                        <i class="fas fa-mobile-alt text-3xl text-indigo-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Mobile App Development</h3>
+                        <p class="text-gray-400">Engaging and high-performance iOS and Android apps that your users will love.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl text-left scroll-reveal" style="transition-delay: 0.2s;">
+                        <i class="fas fa-cloud text-3xl text-indigo-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Cloud & DevOps Solutions</h3>
+                        <p class="text-gray-400">Scalable cloud infrastructure and streamlined deployment pipelines for maximum efficiency.</p>
+                    </div>
+                     <div class="feature-card p-8 rounded-xl text-left scroll-reveal" style="transition-delay: 0.3s;">
+                        <i class="fas fa-brain text-3xl text-indigo-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">AI & Machine Learning</h3>
+                        <p class="text-gray-400">Integrate intelligent automation and data-driven insights into your business operations.</p>
+                    </div>
+                     <div class="feature-card p-8 rounded-xl text-left scroll-reveal" style="transition-delay: 0.4s;">
+                        <i class="fas fa-shield-alt text-3xl text-indigo-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Cybersecurity Services</h3>
+                        <p class="text-gray-400">Protect your digital assets with our robust security audits and threat mitigation strategies.</p>
+                    </div>
+                     <div class="feature-card p-8 rounded-xl text-left scroll-reveal" style="transition-delay: 0.5s;">
+                        <i class="fas fa-pencil-ruler text-3xl text-indigo-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">UI/UX Design</h3>
+                        <p class="text-gray-400">Creating intuitive, beautiful, and user-centric designs that enhance user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center scroll-reveal">
+                    <span class="text-indigo-400 font-semibold">Our Portfolio</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 mb-6">Case Studies of Success</h2>
+                    <p class="text-gray-300 text-lg mb-12">
+                        We are proud of the impact we've made. Explore some of our successful collaborations.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg scroll-reveal">
+                        <img src="https://placehold.co/800x600/111827/ffffff?text=Fintech+Platform" alt="Project 1" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/70 flex flex-col justify-end p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-2xl font-bold text-white">Fintech Revolution</h3>
+                            <p class="text-gray-300 mt-2">We engineered a fintech platform providing a secure, high-performance environment for trading and portfolio management. The architecture was designed for massive scalability, handling thousands of transactions per second. Key features included real-time data analytics, AI-powered investment recommendations, and multi-layered security protocols incorporating advanced encryption. Our intuitive UI/UX design simplified complex financial data, making it accessible to both novice investors and seasoned traders. The project resulted in a 40% increase in user engagement and solidified our client's position as a market leader in the financial technology space.</p>
+                        </div>
+                    </div>
+                     <div class="group relative overflow-hidden rounded-lg shadow-lg scroll-reveal" style="transition-delay: 0.2s;">
+                        <img src="https://placehold.co/800x600/1f2937/ffffff?text=HealthTech+App" alt="Project 2" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/70 flex flex-col justify-end p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-2xl font-bold text-white">HealthBridge Connect</h3>
+                            <p class="text-gray-300 mt-2">Our team developed a comprehensive telehealth mobile app that seamlessly connects patients with healthcare providers. The HIPAA-compliant platform features secure video consultations, encrypted messaging, and an integrated system for managing electronic health records (EHR). We focused on creating a user-centric experience, with easy appointment scheduling and prescription management. The app includes a smart symptom checker and personalized wellness tips driven by machine learning. This successful project reduced patient wait times by 60% and improved access to critical healthcare for thousands of users in remote areas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-gray-900/50">
+            <div class="container mx-auto px-6 scroll-reveal">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 mb-6">Let's Build Something Amazing Together</h2>
+                    <p class="text-gray-300 text-lg mb-8">
+                        Have a project in mind or just want to learn more? We'd love to hear from you.
+                    </p>
+                    <form id="contact-form" class="mt-8 space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" id="name" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white" required maxlength="50">
+                            <input type="email" id="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white" required>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <select id="profession" name="profession" class="w-full p-4 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white" required>
+                                <option value="" disabled selected>Select Your Profession</option>
+                                <option value="UG Student">UG Student</option>
+                                <option value="Working Professional">Working Professional</option>
+                            </select>
+                            <div id="experience-field" class="hidden">
+                                <select id="experience" name="experience" class="w-full p-4 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white">
+                                    <option value="" disabled selected>Select Your Experience</option>
+                                    <option value="1">1 Year</option>
+                                    <option value="2">2 Years</option>
+                                    <option value="3">3 Years</option>
+                                    <option value="4">4 Years</option>
+                                    <option value="5">5 Years</option>
+                                    <option value="6">6+ Years</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <textarea id="message" placeholder="Your Message" rows="5" class="w-full p-4 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white" required maxlength="500"></textarea>
+                        
+                        <button type="submit" class="bg-indigo-600 text-white w-full md:w-auto px-10 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <div class="flex justify-center mb-6 space-x-6">
+                <a href="#" class="text-2xl hover:text-indigo-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-indigo-400 transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-2xl hover:text-indigo-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="mb-4 text-sm">
+                <p>Address: Baner, Pune, Maharashtra, India</p>
+                <p>Registered: 2025</p>
+            </div>
+            <p>&copy; 2025 TrailBlazers Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-black/80', 'shadow-lg');
+                } else {
+                    header.classList.remove('bg-black/80', 'shadow-lg');
+                }
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Contact Form Logic
+            const contactForm = document.getElementById('contact-form');
+            const professionSelect = document.getElementById('profession');
+            const experienceField = document.getElementById('experience-field');
+            const experienceSelect = document.getElementById('experience');
+
+            professionSelect.addEventListener('change', function() {
+                if (this.value === 'Working Professional') {
+                    experienceField.classList.remove('hidden');
+                    experienceSelect.required = true;
+                } else {
+                    experienceField.classList.add('hidden');
+                    experienceSelect.required = false;
+                    experienceSelect.value = ''; // Reset value
+                }
+            });
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                // Collect form data
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const profession = professionSelect.value;
+                const experience = experienceSelect.value;
+                const message = document.getElementById('message').value;
+
+                // Format the message for WhatsApp
+                let whatsappMessage = `*New Inquiry from ${name}*\n\n` +
+                                      `*Email:* ${email}\n` +
+                                      `*Profession:* ${profession}\n`;
+
+                if (profession === 'Working Professional' && experience) {
+                    whatsappMessage += `*Experience:* ${experience} Year(s)\n`;
+                }
+                
+                whatsappMessage += `*Message:* ${message}`;
+
+                // Construct the WhatsApp URL
+                const whatsappNumber = '918999463721';
+                const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+                // Open WhatsApp in a new tab
+                window.open(url, '_blank').focus();
+            });
+
+
+            // Scroll reveal animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Keyframe animations for hero section text
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fade-in-down {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                @keyframes fade-in-up {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                .animate-fade-in-down {
+                    animation: fade-in-down 0.8s ease-out forwards;
+                }
+                .animate-fade-in-up {
+                    animation: fade-in-up 0.8s ease-out 0.3s forwards;
+                    opacity: 0;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
